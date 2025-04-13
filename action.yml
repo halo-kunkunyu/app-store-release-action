@@ -1,0 +1,29 @@
+name: "Yunext App Store Release"
+description: "Sync release to Yunext App Store"
+author: "kunkunyu"
+inputs:
+  github-token:
+    description: "GitHub Token"
+    required: true
+  app-id:
+    description: "App id from Yunext app store"
+    required: true
+  assets-dir:
+    description: "Assets directory"
+    required: true
+  release-id:
+    description: "Current release id"
+    required: true
+  yunext-backend-baseurl:
+    description: "Base url of Yunext app store"
+    required: false
+    default: "https://yunext.cn"
+  yunext-pat:
+    description: "Personal access token of Yunext app store"
+    required: true
+outputs:
+  status:
+    description: "Status"
+runs:
+  using: "node20"
+  main: "dist/index.js"
