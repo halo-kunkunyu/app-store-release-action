@@ -75,7 +75,7 @@ jobs:
             build/libs/*.jar
           retention-days: 1
 
-  halo-store-release:
+  yunext-store-release:
     runs-on: ubuntu-latest
     needs: build
     if: github.event_name == 'release'
@@ -89,7 +89,7 @@ jobs:
           name: plugin-starter
           path: build/libs
       - name: Sync to Yunext App Store
-        uses: halo-kunkunyu/halo-store-release-action@v3
+        uses: halo-kunkunyu/yunext-store-release-action@v3
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           app-id: ${{secrets.APP_ID}}
